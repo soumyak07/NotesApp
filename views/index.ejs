@@ -12,19 +12,23 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">📒 Take Notes Tonight</h1>
-            <a href="/new" class="btn btn-success float-right">New Note</a>
+            <h1 class="display-4">📒 Notify Me.</h1>
+            <a href="/new" class="btn btn-success float-right" style="width: 9rem; padding:0.7rem">New Note</a>
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="min-height: 100vh;">
+        <% if(notes.length == 0){ %>
+            <h1 class="display-6 text-center" >No Notes Uploaded Yet!</h1>
+        <% } %>
+
         <% notes.forEach(note => { %>
-        <div class="card mt-2">
+        <div class="card mt-2" style="width: 80%;">
             <div class="card-body">
-                <h5 class="card-title"><%= note.title %></h5>
+                <h4 class="card-title"><%= note.title %></h5>
                 <p class="text-muted">Posted On: <%= note.createdAt.toLocaleDateString() %></p>
-                <p class="card-text"><%= note.description %></p>
+                <p class="card-text" style="font-size: 1.29rem"><%= note.description %></p>
                 <form action="/<%= note._id %>?_method=DELETE" method="POST">
-                    <button href="#" class="btn btn-danger float-right">Delete</button>
+                    <button href="#" class="btn btn-danger float-right" style="width: 7rem; padding:0.7rem">Delete</button>
                 </form>
             </div>
         </div>
