@@ -12,14 +12,14 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">📒 Take Notes Tonight</h1>
-            <a href="/new" class="btn btn-success float-right">New Note</a>
+            <h1 class="display-4">📒 Notify Me.</h1>
+            <a href="/new" class="btn btn-success float-right" style="width: 9rem; padding:0.7rem">New Note</a>
         </div>
     </div>
     <div class="container">
         <form action="/" method="POST">
             <div class="form-group">
-                <label for="title">Email address</label>
+                <label for="title">Note Title</label>
                 <input type="text" class="form-control" name="title" placeholder="Enter Note Title" required>
             </div>
             <div class="form-group">
@@ -27,8 +27,8 @@
                 <textarea class="form-control" name="description" rows="10" required></textarea>
             </div>
             <div class="buttons float-right">
-                <a href="/" class="btn btn-secondary">Cancel</a>
-                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="/" class="btn btn-secondary" style="width: 7rem; padding:0.7rem">Cancel</a>
+                <button type="submit" class="btn btn-primary" style="width: 7rem; padding:0.7rem">Save</button>
             </div>
         </form>
     </div>
