@@ -6,19 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>NotesApp</title>
+    <title>Notes Tonight</title>
 </head>
 
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">📒 Notify Me.</h1>
+            <h1 class="display-4">📒 Take Notes Tonight</h1>
             <a href="/new" class="btn btn-success float-right" style="width: 9rem; padding:0.7rem">New Note</a>
         </div>
     </div>
     <div class="container" style="min-height: 100vh;">
         <% if(notes.length == 0){ %>
-            <h1 class="display-6 text-center" >No Notes Uploaded Yet!</h1>
+            <h1 class="display-6 text-center" style="display:none;" id="noNotes">No Notes Uploaded Yet!</h1>
+
+            <div class="card mt-2" style="width: 80%;" id="example">
+                <div class="card-body">
+                    <h4 class="card-title">Musical Note - Example</h5>
+                    <p class="text-muted">Posted On: 12/01/2023></p>
+                    <p class="card-text" style="font-size: 1.29rem">In music, a note is the representation of a musical sound. Notes can represent the pitch and duration of a sound in musical notation. A note can also represent a pitch class. Notes are the building blocks of much written music: discretizations of musical phenomena that facilitate performance, comprehension, and analysis.[1] The term note can be used in both generic and specific senses: one might say either "the piece 'Happy Birthday to You' begins with two notes having the same pitch", or "the piece begins with two repetitions of the same note". In the former case, one uses note to refer to a specific musical event; in the latter, one uses the term to refer to a class of events sharing the same pitch. (See also: Key signature names and translations.)</p>
+                    <div href="#" class="btn btn-danger float-right" style="width: 7rem; padding:0.7rem" onclick="run()">Delete</div>
+                </div>
+            </div>
         <% } %>
 
         <% notes.forEach(note => { %>
@@ -34,6 +43,17 @@
         </div>
         <%}) %>
     </div>
+    <script>
+        const example = document.getElementById('example');
+        const no = document.getElementById('noNotes');
+        console.log(example);
+
+        function run(){
+            console.log("RUnn")
+            example.remove();
+            no.style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>
